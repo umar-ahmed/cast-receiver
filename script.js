@@ -12,7 +12,8 @@ var castReceiverManager = new cast.receiver.CastReceiverManager.getInstance();
 // Add listener for connect event
 castReceiverManager.onSenderConnected = function(event) {
     debug_print('sender connected with ID: ' + event.senderId + ' and User Agent: ' + event.userAgent);
-    if (data) {
+    // TODO: This is broken
+    if (event.data) {
         debug_print('DATA: ' + String(event.data));
     }
 };
